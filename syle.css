@@ -1,0 +1,64 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('ruta_a_tu_imagen.jpg'); /* Agrega la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%; /* Reduce la altura para dejar espacio para el título */
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+}
+h2{
+  margin-top: -10px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  height: auto; /* Altura automática */
+  min-height: 250px; /* Altura mínima para asegurar que todos sean iguales */
+  width: 250px; /* Anchura fija para asegurar que todos sean iguales */
+}
+
+.input-box img {
+  max-width: 100%;
+  max-height: 150px; /* Ajustar el tamaño máximo de la imagen */
+  margin-bottom: 10px;
+}
+
+.input-box input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  width: calc(100% - 12px); /* Asegura que el input ocupe todo el ancho menos el padding */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
