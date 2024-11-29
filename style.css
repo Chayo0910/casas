@@ -1,64 +1,73 @@
+/* Estilos generales */
 body, html {
   height: 100%;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('ruta_a_tu_imagen.jpg'); /* Agrega la ruta de tu imagen */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  font-family: sans-serif;
 }
 
+/* Contenedor principal */
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90%; /* Reduce la altura para dejar espacio para el título */
-  text-align: center;
+  padding: 20px;
+  max-width: 80%;
 }
 
-h1 {
-  margin-bottom: 20px;
+/* Cuadrícula para los inputs */
+.input-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-
-}
-h2{
-  margin-top: -10px;
-}
-
+/* Estilos para cada input */
 .input-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   border: 1px solid #ccc;
-  padding: 10px;
-  margin: 5px;
   border-radius: 5px;
-  height: auto; /* Altura automática */
-  min-height: 250px; /* Altura mínima para asegurar que todos sean iguales */
-  width: 250px; /* Anchura fija para asegurar que todos sean iguales */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center; /* Centra el contenido horizontalmente */
 }
 
+/* Estilos para las imágenes */
 .input-box img {
   max-width: 100%;
-  max-height: 150px; /* Ajustar el tamaño máximo de la imagen */
+  height: 65%;
   margin-bottom: 10px;
 }
 
+/* Estilos para los inputs */
 .input-box input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 14px;
-  width: calc(100% - 12px); /* Asegura que el input ocupe todo el ancho menos el padding */
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Centra el texto dentro del input */
+}
+
+/* Estilos para el botón */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  margin-top: 5%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+  font-size: 18px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  /* Ajustes para pantallas pequeñas */
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
 }
