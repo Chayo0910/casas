@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Modelo de IA en TensorFlow.js</title>
+  <title>Predicción de Casas con inteligencia artificial</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
 </head>
 <body>
   <div class="container">
     <h1>Predicción de Casas con inteligencia artificial</h1>
-    <div class="input-container">
+
+    <div class="input-grid">
       <div class="input-box">
         <h2>Total de Cuartos</h2>
         <img src="img/cuartos.jfif" alt="Imagen 1">
@@ -19,8 +20,6 @@
         <img src="img/tamaño.png" alt="Imagen 2">
         <input type="number" id="input-value2" placeholder="Pequeña ,mediana o grande">
       </div>
-    </div>
-    <div class="input-container">
       <div class="input-box">
         <h2>Total Baños</h2>
         <img src="img/baños.jfif" alt="Imagen 3">
@@ -32,6 +31,7 @@
         <input type="number" id="input-value4" placeholder="Bueno o mal estado?">
       </div>
     </div>
+
     <button onclick="makePrediction()">Predecir</button>
     <div id="result"></div>
   </div>
