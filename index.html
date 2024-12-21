@@ -9,30 +9,37 @@
   <div class="container">
     <h1>Predicción de Casas con inteligencia artificial</h1>
 
-    <div class="input-grid">
-      <div class="input-box">
-        <h2>Total de Cuartos</h2>
-        <img src="img/cuartos.jfif" alt="Imagen 1">
-        <input type="number" id="input-value" placeholder="Cantidad de Cuartos en la casa">
+    <form id="prediction-form">
+      <div class="input-grid">
+        <div class="input-box">
+          <h2>Total de Cuartos</h2>
+          <img src="img/cuartos.jfif" alt="Imagen 1">
+          <label for="input-value">Cantidad de Cuartos en la casa</label>
+          <input type="number" id="input-value" name="total_rooms" placeholder="Cantidad de Cuartos en la casa">
+        </div>
+        <div class="input-box">
+          <h2>Rango de Tamaño</h2>
+          <img src="img/tamaño.png" alt="Imagen 2">
+          <label for="input-value2">Pequeña ,mediana o grande</label>
+          <input type="number" id="input-value2" name="size_range" placeholder="Pequeña ,mediana o grande">
+        </div>
+        <div class="input-box">
+          <h2>Total Baños</h2>
+          <img src="img/baños.jfif" alt="Imagen 3">
+          <label for="input-value3">Cantidad de baños en la casa</label>
+          <input type="number" id="input-value3" name="total_baths" placeholder="Cantidad de baños en la casa">
+        </div>
+        <div class="input-box">
+          <h2>Estado</h2>
+          <img src="img/estado.webp" alt="Imagen 4">
+          <label for="input-value4">Bueno o mal estado?</label>
+          <input type="number" id="input-value4" name="condition" placeholder="Bueno o mal estado?">
+        </div>
       </div>
-      <div class="input-box">
-        <h2>Rango de Tamaño</h2>
-        <img src="img/tamaño.png" alt="Imagen 2">
-        <input type="number" id="input-value2" placeholder="Pequeña ,mediana o grande">
-      </div>
-      <div class="input-box">
-        <h2>Total Baños</h2>
-        <img src="img/baños.jfif" alt="Imagen 3">
-        <input type="number" id="input-value3" placeholder="Cantidad de baños en la casa">
-      </div>
-      <div class="input-box">
-        <h2>Estado</h2>
-        <img src="img/estado.webp" alt="Imagen 4">
-        <input type="number" id="input-value4" placeholder="Bueno o mal estado?">
-      </div>
-    </div>
 
-    <button onclick="makePrediction()">Predecir</button>
+      <button type="submit">Predecir</button>
+    </form>
+
     <div id="result"></div>
   </div>
   <script src="main.js"></script>
