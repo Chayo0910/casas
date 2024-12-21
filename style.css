@@ -11,15 +11,15 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  max-width: 80%;
+  padding: 2rem;
+ 
 }
 
 /* Cuadrícula para los inputs */
 .input-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Estilos para cada input */
@@ -39,11 +39,12 @@ body, html {
   max-width: 100%;
   height: 65%;
   margin-bottom: 10px;
+  width: 800px;
 }
-
 /* Estilos para los inputs */
 .input-box input {
   height: 40px;
+  margin-top: 10%;
   padding: 10px;
   font-size: 16px;
   width: 100%;
@@ -58,16 +59,10 @@ button {
   padding: 15px 20px;
   margin-top: 5%;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 20%;
-  font-size: 18px;
 }
-
-/* Media queries para responsividad */
+/* Media query para dispositivos móviles */
 @media (max-width: 768px) {
-  /* Ajustes para pantallas pequeñas */
   .input-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
