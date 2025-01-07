@@ -30,17 +30,17 @@ model.compile({
 async function trainModel() {
   // Características de las casas
   const xs = tf.tensor2d([
-    [1, 1, 1, 1], // 1 habitación, 1 baño, sala, buen estado
-    [2, 1, 1, 1], // 2 habitaciones, 1 baño, sala, buen estado
-    [2, 1, 1, 2], // 2 habitaciones, 1 baño, sala, mal estado
-    [3, 2, 1, 1], // 3 habitaciones, 1 baño, sala, buen estado
-    [4, 3, 1, 1], // 4 habitaciones, 2 baños, sala, buen estado
-    [5, 3, 2, 1], // 5 habitaciones, 3 baños, sala, buen estado
-    [5, 3, 2, 2]  // 5 habitaciones, 3 baños, sala, mal estado
+    [1, 1, 1, 1], // 1 habitación, 1 baño, sala, estado de la casa = buen estado
+    [2, 1, 1, 1], // 2 habitaciones, 1 baño, sala,estado de la casa = buen estado
+    [2, 1, 1, 2], // 2 habitaciones, 1 baño, sala,estado de la casa = mal estado
+    [3, 2, 1, 1], // 3 habitaciones, 1 baño, sala,estado de la casa = buen estado
+    [4, 3, 1, 1], // 4 habitaciones, 2 baños, sala,estado de la casa = buen estado
+    [5, 3, 2, 1], // 5 habitaciones, 3 baños, sala,estado de la casa = buen estado
+    [5, 3, 2, 2]  // 5 habitaciones, 3 baños, sala,estado de la casa = mal estado
   ]);
 
   // Valores aproximados de precios (en miles de dólares)
-  const ys = tf.tensor1d([150, 250, 200, 350, 450, 600, 530]); // Precios de las viviendas en miles de dólares
+  const ys = tf.tensor1d([150.000, 250.000, 200.000, 350.000, 450.000, 600.000, 530.000]); // Precios de las viviendas en dólares
 
   // Entrenar el modelo
   await model.fit(xs, ys, { epochs: 100 });
@@ -78,7 +78,7 @@ function makePrediction(event) {
   const resultElement = document.getElementById('result');
 
   // Mostrar solo dos decimales en el resultado
-  resultElement.textContent = `La predicción es: $${prediction.dataSync()[0].toFixed(2)}`;
+  resultElement.textContent = `El valor aproximado es: $${prediction.dataSync()[0].toFixed(3)} Dólares`;
 }
 
 // Entrena el modelo al cargar la página
