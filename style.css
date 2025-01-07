@@ -64,7 +64,7 @@ h2 {
   color: #333;
 }
 p{
-  font-size: clamp(1.0rem, 2vh + 1rem, 1.0rem);
+  font-size: clamp(2.0rem, 2vh + 1rem, 1.0rem);
   
 }
 label {
@@ -120,7 +120,7 @@ button:hover {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3rem;
+  font-size: 500%;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 50%;
@@ -142,9 +142,9 @@ button:hover {
     height: 50%;
   }
 }
-@media (max-width: 400px) {
-  .scroll-arrow {
-    font-size: 6rem;
-  
-  }
+@media (min-width: 1000px) {
+   .scroll-arrow {
+    font-size: 3rem;
+}
+
 }
