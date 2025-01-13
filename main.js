@@ -31,12 +31,12 @@ async function trainModel() {
   // Características de las casas
   const xs = tf.tensor2d([
     [1, 1, 1, 1], // 1 habitación, 1 baño, sala, estado de la casa = buen estado
-    [2, 1, 1, 1], // 2 habitaciones, 1 baño, sala,estado de la casa = buen estado
-    [2, 1, 1, 2], // 2 habitaciones, 1 baño, sala,estado de la casa = mal estado
-    [3, 2, 1, 1], // 3 habitaciones, 1 baño, sala,estado de la casa = buen estado
-    [4, 3, 1, 1], // 4 habitaciones, 2 baños, sala,estado de la casa = buen estado
-    [5, 3, 2, 1], // 5 habitaciones, 3 baños, sala,estado de la casa = buen estado
-    [5, 3, 2, 2]  // 5 habitaciones, 3 baños, sala,estado de la casa = mal estado
+    [2, 1, 1, 1], // 2 habitaciones, 1 baño, sala, estado de la casa = buen estado
+    [2, 1, 1, 2], // 2 habitaciones, 1 baño, sala, estado de la casa = mal estado
+    [3, 2, 1, 1], // 3 habitaciones, 1 baño, sala, estado de la casa = buen estado
+    [4, 3, 1, 1], // 4 habitaciones, 2 baños, sala, estado de la casa = buen estado
+    [5, 3, 2, 1], // 5 habitaciones, 3 baños, sala, estado de la casa = buen estado
+    [5, 3, 2, 2]  // 5 habitaciones, 3 baños, sala, estado de la casa = mal estado
   ]);
 
   // Valores aproximados de precios (en miles de dólares)
@@ -68,7 +68,7 @@ function makePrediction(event) {
   const condition = parseFloat(document.getElementById('condition').value);
 
   // Asegurarse de que los valores no sean NaN
-  if (isNaN(rooms) || isNaN(size) || isNaN(bathrooms) || isNaN(condition)) {
+  if (isNaN(rooms) || isNaN(size) || isNaN(bathrooms) || isNaN(condition)|| size > 3 || condition > 2) {
     alert("Por favor ingresa valores válidos.");
     return;
   }
@@ -79,6 +79,9 @@ function makePrediction(event) {
 
   // Mostrar solo dos decimales en el resultado
   resultElement.textContent = `El valor aproximado es: $${prediction.dataSync()[0].toFixed(3)} Dólares`;
+
+  // Desplazar hacia el resultado
+  resultElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Entrena el modelo al cargar la página
